@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+#root {
+ font-family: 'Playfair Display', serif;
+  color: #3C2A21; 
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+
+
+  --cor-neutra: #FFFFFF;
+  --cor-bege-claro:  #e0d6c8;
+  
+  --cor-neutra-texto: #F5EDE0;
+  --cor-texto-principal: #3E2723;
+  --cor-texto-secundario: #6D4C41;
+
+  --cor-borda-elementos: #D7CCC8;
+  --cor-destaque: #704122;
+
+  --cor-background-button: #4d2d18;
+
+  --cor-feedback-positivo: #3b7a57; 
+  --cor-feedback-negativo: #c0392b;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-fundo); 
+}
+
+
+
+h1 {
+  color: var(--cor-background-button);
+  font-size: 2.3rem; 
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+p{
+  margin-top: 0;
+   font-size: 1.1rem; 
+   font-family: 'Asap', sans-serif;
+}
+
+
+.bemvindo-container {
+  background-image: url('./assets/Gemini_Generated_Image_qoxbiaqoxbiaqoxb.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;               
+  flex-direction: column;      
+  justify-content: center;     
+  align-items: flex-start;         
+  gap: 1rem;                   
+  padding: 4rem;
+  box-sizing: border-box;
+  color: var(--cor-neutra-texto);
+ 
+}
+
+.bemvindo-container button {
+  margin-top: 0; 
+  padding: 1em 3em;
+  font-family: 'Asap', sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--cor-background-button);
+  color: var(--cor-neutra);
+  cursor: pointer;
+}
+
+
+/*    ESTILO DO QUIZ    */
+
+.quiz-container {
+  background-color: var(--cor-neutra); 
+  max-width: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  margin: 0;
+  padding: 2rem;
+}
+
+
+.quiz-container h2 {
+  color: var(--cor-texto-principal);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+.questao-card {
+  background-color: var(--cor-neutra); 
+  width: 40%;
+  font-family: 'Asap', sans-serif;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 1.5rem; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--cor-borda-elementos);
+  text-align: left;
+}
+
+.questao-card h3 {
+  font-size: 1.6rem;
+  color: var(--cor-texto-principal);
+  margin-top: 0;
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.answer {
+  background-color: var(--cor-neutra); 
+  color: var(--cor-texto-secundario);
+  border: 2px solid var(--cor-borda-elementos);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.answer:last-child {
+  margin-bottom: 0;
+}
+
+.answer:hover {
+  border-color: var(--cor-destaque);
+  background-color: var(--cor-neutra);
+}
+
+.answer.selected {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: var(--cor-neutra);
+  font-weight: 600;
+}
+
+.quiz-container button {
+  display: block;
+  width: 45%;
+  padding: 16px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--cor-neutra);
+  background-color: var(--cor-background-button);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/*    PROGRESS BAR      */
+
+.progress-bar {
+  width: 80%;
+  height: 12px;
+  background-color: var(--cor-bege-claro);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--cor-background-button); 
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.quiz-container button {
+  display: block;
+  width: 40%;
+  padding: 16px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color:var(--cor-neutra);
+  background-color: var(--cor-background-button);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* FEEDBACK DE RESPOSTA  */
+
+
+.feedback-text {
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.feedback-correct {
+  color:var(--cor-feedback-positivo); 
+}
+
+.feedback-wrong {
+  color:var(--cor-feedback-negativo); 
+}
+
+.answer.correct {
+  background-color: #c8e6c9;
+  border-color: #2e7d32;
+  color: #1b5e20;
+}
+
+.answer.wrong {
+  background-color: #ffcdd2;
+  border-color: #c62828;
+  color: #7f0000;
+}
+
+/* ESTILO CONCLUSÃO */
+
+.conclusao-page {
+ width: 100%;
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  padding: 2rem; 
+  box-sizing: border-box; 
+  font-family: 'Asap', sans-serif; 
+  gap: 25px; 
+} 
+
+.action-buttons { 
+  display: flex; 
+   justify-content: center; 
+        
+}
+
+.completion-card { 
+  background-color: var(--cor-fundo-card); 
+  border-radius: 16px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 480px; 
+  width: 100%; 
+  text-align: center;
+  border: 1px solid var(--cor-borda-elementos);
+  padding: 30px 40px; 
+} 
+.completion-card h1 { 
+  font-family: 'Playfair Display', serif; 
+  color: var(--cor-texto-principal); 
+  font-size: 2.5rem; margin-bottom: 8px;
+} 
+.completion-card .subtitle {
+  font-size: 1.1rem; 
+  color: var(--cor-texto-secundario);
+  margin-bottom: 25px;
+}
+.score-section {
+   margin: 20px 0;
+} 
+   
+.score-section p {
+   font-size: 1.1rem;
+   margin-bottom: 5px;
+   color: var(--cor-texto-secundario);
+} 
+
+.score-value {
+   font-family: 'Playfair Display', serif;
+   font-size: 4rem;
+   font-weight: 700; display: block;
+} 
+
+.score-value.low { color: #757575; 
+} 
+
+.score-value.high {
+   color: var(--cor-feedback-positivo); 
+   }
+   
+.completion-card .feedback-text { 
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 350px;
+  margin: 0 auto 30px;
+  color: var(--cor-texto-secundario); 
+} 
+ 
+.action-buttons { 
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.action-buttons .btn { 
+  display: block;
+  width: 480px;
+  padding: 16px; 
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--cor-neutra);
+  background-color: var(--cor-background-button);
+  border: none;
+  border-radius: 10px; 
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+} 
+.action-buttons .btn .material-symbols-outlined { 
+  font-size: 1.2rem; 
+}
